@@ -1,4 +1,4 @@
-node('agent') {
+node('any') {
 
 print "****  START: SET  VARIABLES  : START ****"
     def mavenHome   = tool 'MVN361'
