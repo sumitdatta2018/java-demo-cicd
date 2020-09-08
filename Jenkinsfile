@@ -1,4 +1,4 @@
-pipeline {
+node {
 
 print "****  START: SET  VARIABLES  : START ****"
     def mavenHome   = tool 'MVN363'
