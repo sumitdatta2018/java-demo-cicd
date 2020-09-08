@@ -1,7 +1,7 @@
-node('any') {
+pipeline {
 
 print "****  START: SET  VARIABLES  : START ****"
-    def mavenHome   = tool 'MVN361'
+    def mavenHome   = tool 'MVN363'
     def branchName  = "${BRANCH_NAME}"
     def buildNum    = "${BUILD_NUMBER}"
     def serviceName = "demo-service"
