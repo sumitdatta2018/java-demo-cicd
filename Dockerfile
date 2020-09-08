@@ -1,5 +1,5 @@
-FROM 10.9.0.172:5000/openjdk:centos8
-LABEL "Maintainer"="Axis"
+FROM openjdk:8
+
 USER 0
 RUN groupadd demo && adduser -d /opt/app -g  demo  demo
 WORKDIR /opt/apps
