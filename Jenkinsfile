@@ -27,10 +27,11 @@ print "****  END: SCM  CHECKOUT  : END ****"
     stage 'TAG/PUSH IMAGE'
 
     sh "sudo docker tag ${imageName} ${dockerRepo}/${imageName}"
+	sh "docker login -u devopspoc2020 -p Welcome@1234"
     sh "sudo docker push ${dockerRepo}/${imageName}"
 
-  stage 'DEPLOY TO SWARM'
+  //stage 'DEPLOY TO SWARM'
 
-    sh "chmod +x deploy.sh && ./deploy.sh ${dockerSwarm} ${dockerRepo}/${imageName} ${serviceName}"
+    //sh "chmod +x deploy.sh && ./deploy.sh ${dockerSwarm} ${dockerRepo}/${imageName} ${serviceName}"
        
 }
