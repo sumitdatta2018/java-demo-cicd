@@ -30,8 +30,15 @@ print "****  END: SCM  CHECKOUT  : END ****"
 	sh "sudo docker login -u devopspoc2020 -p Welcome@1234"
     sh "sudo docker push ${dockerRepo}/${imageName}"
 
-  //stage 'DEPLOY TO SWARM'
+  stage 'DEPLOY TO DOCKER'
+    try {
+            sh "sudo docker rm -f ${serviceName}"
+        }
+    catch (exc) {
+            echo 'Unable to remove container or container does not exits'
+            
+        }
 
-    //sh "chmod +x deploy.sh && ./deploy.sh ${dockerSwarm} ${dockerRepo}/${imageName} ${serviceName}"
+    sh "sudo docker run -dit --name ${serviceName} -p 8080:8080 ${dockerRepo}/${imageName}"
        
 }
